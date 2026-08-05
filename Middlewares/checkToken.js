@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
-const secret = process.env.secret;
+
 const checkToken = (req, res, next) => {
   try {
     const token = req.cookies.token;
@@ -11,7 +10,7 @@ const checkToken = (req, res, next) => {
       });
     }
 
-    const user = jwt.verify(token, secret);
+    const user = jwt.verify(token, process.env.secret);
 
     req.user = user;
 
