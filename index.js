@@ -15,8 +15,8 @@ mongoose
   .then((e) => console.log("Mongo DB connected"))
   .catch((e) => console.log("Failed to connect with database"));
 
-const userRoute = require("./Routes/userRoute");
-const productRoute = require("./Routes/productRoute");
+const userRoute = require("./src/Routes/userRoute");
+const productRoute = require("./src/Routes/productRoute");
 app.use("/user", userRoute);
 app.use("/product", productRoute);
 

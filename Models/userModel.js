@@ -16,6 +16,12 @@ const userSchema = mongoose.Schema({
     trim: true,
     lowercase: true,
     unique: true,
+    validate: {
+      validator: function (value) {
+        return value.endsWith("@gmail.com");
+      },
+      message: "Only Gmail addresses are allowed.",
+    },
   },
   password: {
     type: String,
@@ -25,8 +31,6 @@ const userSchema = mongoose.Schema({
     trim: true,
   },
 });
-
-
 
 const userModel = mongoose.model("user", userSchema);
 
