@@ -7,4 +7,5 @@ const authorization = (...roles)=>{
     }
 }
 
-module.exports = authorization;  
+
+module.exports = authorization;
