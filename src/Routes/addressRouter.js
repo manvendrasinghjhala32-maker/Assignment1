@@ -28,6 +28,6 @@ addressRoute.post("/createAddress", authMiddleware, async (req, res) => {
 }
     
     catch(err){
-        res.status(400).sen({messege:err})
+        res.status(400).send({messege:err})
     }
     });
